@@ -31,14 +31,28 @@
             <div>
                 <h3 class="capitalize text-xl font-lg mb-3 text-center text-indigo-800 font-medium">please login</h3>
                 <form class="flex flex-col justify-center justify-items-center content-center grid gap-y-4 ">
-                    <input type="email" name="" id="" placeholder=" Email" class="w-80 rounded">
-                    <input type="password" name="" id="" placeholder=" Password" class="w-80 rounded">
-                    <button type="submit"
-                        class="bg-blue-500 mb-3 py-1 px-4 rounded text-white text-left">Submit</button>
+                    <input type="email" name="" id="email" placeholder=" Email" class="w-80 rounded">
+                    <input type="password" name="password" id="password" placeholder=" Password" class="w-80 rounded">
+                    <button type="button" class="bg-blue-500 mb-3 py-1 px-4 rounded text-white text-left"
+                        id="submitButton">Submit</button>
                 </form>
             </div>
         </div>
     </section>
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function () {
+            const users = [
+                { email: 'a@a.com', password: 'abc' }
+            ];
+            const inputEmail = document.getElementById('email').value;
+            const inputPassword = document.getElementById('password').value;
+            // console.log(inputEmail.toLowerCase())
+            if (inputEmail.toLowerCase() == users[0].email && inputPassword == users[0].password) {
+                location = 'account.html';
+            }
+            else alert('Email or Password did not match.');
+        });
+    </script>
 </body>
 
 </html>
