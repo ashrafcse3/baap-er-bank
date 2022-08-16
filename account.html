@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your bank account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <section class="bg-green-100 py-10">
+        <div class="container mx-auto">
+            <header class="text-center py-10 font-medium">
+                <h1 class="text-4xl text-blue-500">
+                    Let's get some
+                    <span class="text-blue-800 font-bold">Moooooooooney</span> !!!
+                </h1>
+            </header>
+            <section class="grid grid-cols-3 gap-x-8">
+                <div class="bg-green-400 text-white text-3xl text-center p-7 rounded-lg">
+                    <h3>Deposit</h3>
+                    <h3>$ 00</h3>
+                </div>
+                <div class="bg-pink-400 text-white text-3xl text-center p-7 rounded-lg">
+                    <h3>Withdraw</h3>
+                    <h3>$ 00</h3>
+                </div>
+                <div class="bg-rose-400 text-white text-3xl text-center p-7 rounded-lg">
+                    <h3>Balance</h3>
+                    <h3>$ 00</h3>
+                </div>
+            </section>
+            <section class="grid grid-cols-2 my-10 gap-6">
+                <div class="bg-blue-400 p-7 rounded-lg">
+                    <h3 class="text-xl text-white mb-3">Please Deposit</h3>
+                    <form>
+                        <div>
+                            <input type="text" name="" id="" placeholder=" Amount you want to deposit"
+                                class="w-9/12 mb-3 rounded">
+                        </div>
+                        <button type="submit" class="bg-blue-900 text-white py-1 px-4 rounded">Deposit</button>
+                    </form>
+                </div>
+                <div class="bg-purple-400 p-7 rounded-lg">
+                    <h3 class="text-xl text-white mb-3">Please Withdraw</h3>
+                    <form>
+                        <div>
+                            <input type="text" name="" id="" placeholder=" Amount you want to withdraw"
+                                class="w-9/12 mb-3 rounded">
+                        </div>
+                        <button type="submit" class="bg-blue-900 text-white py-1 px-4 rounded">Withdraw</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </section>
+</body>
+
+</html>
