@@ -32,15 +32,15 @@
             <section class="grid grid-cols-3 gap-x-8">
                 <div class="bg-green-400 text-white text-3xl text-center p-7 rounded-lg">
                     <h3>Deposit</h3>
-                    <h3>$ 00</h3>
+                    <h3>$ <span id="htmlDeposit">00</span></h3>
                 </div>
                 <div class="bg-pink-400 text-white text-3xl text-center p-7 rounded-lg">
                     <h3>Withdraw</h3>
-                    <h3>$ 00</h3>
+                    <h3>$ <span id="htmlWithdraw">00</span></h3>
                 </div>
                 <div class="bg-rose-400 text-white text-3xl text-center p-7 rounded-lg">
                     <h3>Balance</h3>
-                    <h3>$ 00</h3>
+                    <h3>$ <span id="htmlBalance">1240</span></h3>
                 </div>
             </section>
             <section class="grid grid-cols-2 my-10 gap-6">
@@ -48,25 +48,60 @@
                     <h3 class="text-xl text-white mb-3">Please Deposit</h3>
                     <form>
                         <div>
-                            <input type="text" name="" id="" placeholder=" Amount you want to deposit"
+                            <input type="text" name="" id="depositValue" placeholder=" Amount you want to deposit"
                                 class="w-9/12 mb-3 rounded">
                         </div>
-                        <button type="submit" class="bg-blue-900 text-white py-1 px-4 rounded">Deposit</button>
+                        <button type="button" class="bg-blue-900 text-white py-1 px-4 rounded"
+                            id="depositButton">Deposit</button>
                     </form>
                 </div>
                 <div class="bg-purple-400 p-7 rounded-lg">
                     <h3 class="text-xl text-white mb-3">Please Withdraw</h3>
                     <form>
                         <div>
-                            <input type="text" name="" id="" placeholder=" Amount you want to withdraw"
+                            <input type="text" name="" id="withdrawValue" placeholder=" Amount you want to withdraw"
                                 class="w-9/12 mb-3 rounded">
                         </div>
-                        <button type="submit" class="bg-blue-900 text-white py-1 px-4 rounded">Withdraw</button>
+                        <button type="button" class="bg-blue-900 text-white py-1 px-4 rounded"
+                            id="withdrawButton">Withdraw</button>
                     </form>
                 </div>
             </section>
         </div>
     </section>
+    <script>
+        let balance = 1240;
+        let deposit = 0;
+        let withdraw = 0;
+        document.getElementById('depositButton').addEventListener('click', function () {
+            // deposit
+            const inputDesposit = document.getElementById('depositValue').value;
+            deposit = parseInt(inputDesposit);
+            balance = balance + deposit;
+            // console.log(deposit, balance);
+            // update the html deposit
+            document.getElementById('htmlDeposit').innerText = deposit;
+
+            // update the html balance
+            document.getElementById('htmlBalance').innerText = balance;
+        });
+        document.getElementById('withdrawButton').addEventListener('click', function () {
+            // withdraw
+            const inputWithdraw = document.getElementById('withdrawValue').value;
+            if (inputWithdraw > balance) {
+                alert('you do not enough balance');
+            }
+            else {
+                withdraw = parseInt(inputWithdraw);
+                balance = balance - withdraw;
+                // update the html withdraw
+                document.getElementById('htmlWithdraw').innerText = withdraw;
+
+                // update the html balance
+                document.getElementById('htmlBalance').innerText = balance;
+            }
+        });
+    </script>
 </body>
 
 </html>
